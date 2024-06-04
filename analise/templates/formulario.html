@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <div class="container mt-5">
+    <h2 class="mb-4">Formulário de Previsão de Acidente Aéreo</h2>
+    <form method="post">
+      {% csrf_token %}
+      <div class="form-group">
+        <label for="id_Numero_Ocorrencia">Número de Ocorrência:</label>
+        <input type="text" class="form-control" id="id_Numero_Ocorrencia" name="Numero_Ocorrencia">
+      </div>
+      <div class="form-group">
+        <label for="id_Data">Data:</label>
+        <input type="date" class="form-control" id="id_Data" name="Data">
+      </div>
+      <div class="form-group">
+        <label for="id_Localidade">Localidade:</label>
+        <input type="text" class="form-control" id="id_Localidade" name="Localidade" required>
+      </div>
+      <div class="form-group">
+        <label for="id_UF">UF:</label>
+        <input type="text" class="form-control" id="id_UF" name="UF" required>
+      </div>
+      <div class="form-group">
+        <label for="id_Aerodromo">Aeródromo:</label>
+        <input type="text" class="form-control" id="id_Aerodromo" name="Aerodromo" required>
+      </div>
+      <div class="form-group">
+        <label for="id_Operacao">Operação:</label>
+        <input type="text" class="form-control" id="id_Operacao" name="Operacao" required>
+      </div>
+      <button type="submit" class="btn btn-primary">Enviar</button>
+    </form>
+  </div>
+{% endblock %}
